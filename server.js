@@ -4,6 +4,7 @@ const cors = require('cors')
 const morgan = require('morgan')
 const product = require('./routes/product')
 const order = require('./routes/order')
+const path = require('path')
 const app = express()
 
 //connect to database
@@ -20,6 +21,11 @@ app.use(cors())
 app.use(express.json())
 app.use(morgan('dev'))
 
+//static build folder
+app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
+  
 //static image folder
 app.use('/uploads',express.static('./uploads'))
 
