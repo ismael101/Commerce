@@ -21,17 +21,15 @@ app.use(cors())
 app.use(express.json())
 app.use(morgan('dev'))
 
-//static build folder
-app.get('*', (req,res) =>{
-    res.sendFile(path.join(__dirname+'/client/build/index.html'));
-});
-  
 //static image folder
 app.use('/uploads',express.static('./uploads'))
 
 //api endpoints
 app.use('/api/products', product)
 app.use('/api/orders', order)
+
+//static build folder
+app.use('/', express.static(__dirname + '/client/build'));
 
 // Error handlers - for not found, and app errors 
 app.use(function(req, res, next){
