@@ -1,0 +1,5 @@
+export const SETITEMS = 'SETITEMS'
+export const SETCART = 'SETCART'
+export const ADD = 'ADD'
+export const UPDATE = 'UPDATE'
+export const DELETE = 'DELETE'
