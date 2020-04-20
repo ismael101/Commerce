@@ -29,7 +29,11 @@ app.use('/api/products', product)
 app.use('/api/orders', order)
 
 //static build folder
-app.use('/', express.static(__dirname + '/client/build'));
+app.use(express.static(path.join(__dirname, 'client', 'build')))
+
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
 
 // Error handlers - for not found, and app errors 
 app.use(function(req, res, next){
