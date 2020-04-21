@@ -32,7 +32,7 @@ class Cart extends Component{
            <div>
                <Container fluid className='py-5 px-5'>
                    <Row>
-                       <Col xs={12} sm={12} md={9} align='center'>
+                       <Col xs={12} sm={12} md={8} align='center'>
                        <Table responsive>
                             <thead>
                                 <tr>
@@ -47,8 +47,8 @@ class Cart extends Component{
                             </tbody>
                         </Table>
                        </Col>
-                       <Col xs={12} sm={12} md={3} align='center'>
-                            <Total total={this.props.total}/>
+                       <Col xs={12} sm={12} md={4} align='center'>
+                            <Total total={this.props.total.toFixed(2)}/>
                         </Col>
                     </Row>
                 </Container>

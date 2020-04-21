@@ -12,8 +12,6 @@ import Navigation from './components/Navigation'
 import store from './store'
 import './App.css'
 
-axios.defaults.baseURL = 'http://localhost:4000';
-
 class App extends Component{
   async componentDidMount() {
     let products = await axios.get('/api/products')
