@@ -19,7 +19,7 @@ export default function Product(props){
           <Card.Header>
             <Card.Title><Link to={`/product/${props.product._id}`}><p className='text-left'>{props.product.name}</p></Link></Card.Title>
           </Card.Header>
-          <Card.Img variant="top" src={`http://localhost:4000/${props.product.image}`} fluid="true"/>
+          <Card.Img variant="top" src={`/${props.product.image}`} fluid="true"/>
           <Card.Body>
             <p className='text-left'>${props.product.price.toFixed(2)}</p>
             <div className='text-left'>{rating()}</div>        

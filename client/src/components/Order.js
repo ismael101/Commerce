@@ -10,7 +10,7 @@ export default function Order(props){
             <Image
                 width={128}
                 className="mr-3"
-                src={`http://localhost:4000/${props.order.product.image}`}
+                src={`/${props.order.product.image}`}
                 alt="Generic placeholder"
             />
             <Media.Body className='text-left'>

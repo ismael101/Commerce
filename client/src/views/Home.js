@@ -8,7 +8,7 @@ import {add} from '../actions/cartActions'
 class Home extends Component{
     async handleAdd(product){
         try{
-            let res = await axios.post('http://localhost:4000/api/orders',{quantity:1,product:product._id})
+            let res = await axios.post('/api/orders',{quantity:1,product:product._id})
             store.dispatch(add(res.data))
         }catch(err){
             console.log(err)

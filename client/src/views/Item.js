@@ -14,7 +14,7 @@ class Item extends Component{
   async handleSubmit(e){
     e.preventDefault();
     try{
-        let res = await axios.post('http://localhost:4000/api/orders',{quantity:this.state.quantity,product:this.props.items.filter(item => item._id === this.props.match.params.id)[0]._id})
+        let res = await axios.post('/api/orders',{quantity:this.state.quantity,product:this.props.items.filter(item => item._id === this.props.match.params.id)[0]._id})
         store.dispatch(add(res.data))
     }catch(err){
         console.log(err)
@@ -40,7 +40,7 @@ class Item extends Component{
         let show = item.length > 0 ? (
                 <Row className='mt-5'>
                    <Col xs={12} sm={12} md={8}>
-                        <Image variant="top" src={`http://localhost:4000/${item[0].image}`} fluid className='mt-2'/>
+                        <Image variant="top" src={`/${item[0].image}`} fluid className='mt-2'/>
                     </Col>
                     <Col xs={12} sm={12} md={4}>
                         <div className='my-2'>
