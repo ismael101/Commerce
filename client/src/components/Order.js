@@ -8,22 +8,23 @@ export default function Order(props){
         <td>
             <Media>
             <Image
+                id='image'
                 width={128}
                 className="mr-3"
                 src={`/${props.order.product.image}`}
                 alt="Generic placeholder"
             />
             <Media.Body className='text-left'>
-                <h5>{props.order.product.name}</h5>
-                <p>{props.order.product.description}</p>
+                <h5 id='name'>{props.order.product.name}</h5>
+                <p id='description'>{props.order.product.description}</p>
             </Media.Body>
             </Media>
         </td>
         <td>
-            <span className='align-center'>${props.order.product.price.toFixed(2)}</span>
+            <span className='align-center' id='price'>${props.order.product.price.toFixed(2)}</span>
         </td>
         <td>
-        <Form.Group controlId="exampleForm.ControlSelect1">
+        <Form.Group>
         <Form.Control as="select" value={quantity} onChange={(e) => {props.change({quantity:e.target.value, order:props.order}); setQuantity(e.target.value)}}>
         <option>1</option>
         <option>2</option>
@@ -34,7 +35,7 @@ export default function Order(props){
         </Form.Group>
         </td>
         <td>
-        <Button variant='outline-danger' onClick={() => {props.delete(props.order)}}>
+        <Button variant='outline-danger' onClick={() => {props.delete(props.order)}} id='submit'>
         <i className="material-icons">
         delete_outline
         </i>

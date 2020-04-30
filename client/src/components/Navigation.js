@@ -18,8 +18,10 @@ class Navigation extends Component{
               <i className="material-icons">
               shopping_cart
               </i>
-              <Badge variant='danger'pill>
+              <Badge variant='danger' pill>
+                    <span id='cart'>
                       {this.props.amount}
+                    </span>
               </Badge> 
               </Button>
               </Link>

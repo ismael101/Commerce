@@ -8,7 +8,7 @@ export default function Total(props){
                 <p>Total</p>
             </Card.Header>
             <Card.Body className='py-2 px-2'>
-                <span className='text-center align-center display-2'>${props.total}</span>
+                <span className='text-center align-center display-2' id='total'>${props.total}</span>
             </Card.Body>
         </Card>
     )

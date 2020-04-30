@@ -17,15 +17,15 @@ export default function Product(props){
       return(
         <Card className='my-5 mx-5 h-100'>
           <Card.Header>
-            <Card.Title><Link to={`/product/${props.product._id}`}><p className='text-left'>{props.product.name}</p></Link></Card.Title>
+            <Card.Title><Link to={`/product/${props.product._id}`}><p className='text-left' id='name'>{props.product.name}</p></Link></Card.Title>
           </Card.Header>
-          <Card.Img variant="top" src={`/${props.product.image}`} fluid="true"/>
+          <Card.Img variant="top" src={`/${props.product.image}`} fluid="true" id='image'/>
           <Card.Body>
-            <p className='text-left'>${props.product.price.toFixed(2)}</p>
-            <div className='text-left'>{rating()}</div>        
+            <p className='text-left' id='price'>${props.product.price.toFixed(2)}</p>
+            <div className='text-left' id='rating'>{rating()}</div>        
           </Card.Body>
           <Card.Footer className='text-left' variant='light'>
-              <Button variant='primary' onClick={() => {props.add(props.product)}} block>Add</Button>
+              <Button variant='primary' onClick={() => {props.add(props.product)}} data-testid='add' block id='add'>Add</Button>
           </Card.Footer>
         </Card>
       )
